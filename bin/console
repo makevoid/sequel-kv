@@ -1,1 +1,4 @@
-sequel sqlite://tmp.db
+#!/usr/bin/env bash
+
+# irb -r ../lib/env.rb
+bundle exec irb -r ./lib/sequel_kv.rb

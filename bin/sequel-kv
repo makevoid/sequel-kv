@@ -1,0 +1,13 @@
+thor based cli
+
+SequelKV
+CLI < Thor
+
+action :clear do
+
+end
+
+# ....
+
+sequel-kv clear           (clears main db)
+sequel-kv clear <DB_NAME> (clears specified db)
