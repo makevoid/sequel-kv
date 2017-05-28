@@ -6,6 +6,8 @@ class Demo
     kv = KV.init!
     @db = kv.db
 
+    @db[:kv].truncate
+
     puts "Empty value:"
     puts KV[:test].inspect
 
