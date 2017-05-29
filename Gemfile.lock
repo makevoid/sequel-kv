@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.3)
+    mysql2 (0.4.6)
+    redis (3.3.3)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -18,6 +20,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  mysql2
+  redis
   rspec-core
   rspec-expectations
   rspec-mocks

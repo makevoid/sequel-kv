@@ -1,0 +1,46 @@
+REDIS
+       user     system      total        real
+
+
+
+
+SET-GET 1k key-value pairs
+
+
+
+
+
+  0.010000   0.000000   0.010000 (  0.000323)
+
+
+
+
+SET-GET-log 300 new kvs 300 updates
+
+
+
+
+
+  0.000000   0.010000   0.010000 (  0.015057)
+
+
+
+
+SET-GET 300 existing kvs
+
+
+
+
+
+  0.020000   0.000000   0.020000 (  0.017589)
+
+
+
+
+GET 5k existing kvs (same key)
+
+
+
+
+
+  0.080000   0.040000   0.120000 (  0.120299)

@@ -5,23 +5,27 @@ class KV # Key Value
 
   LOG = false
 
-  def self.init!
-    instance = Init.init! log: LOG
-    @db = instance.sequel_db
+  def self.init!(db: nil)
+    instance = Init.init! log: LOG, db: db
+    @@db = instance.sequel_db
     self
+  end
+
+  def self.db
+    @@db
   end
 
   def self.[](key)
     puts "GET #{key.inspect}" if LOG
     key = key.to_s
-    record = @db[:kv].where(key: key).first
+    record = db[:kv].where(key: key).first
     record[:value] if record
   end
 
   def self.[]=(key, value)
     puts "SET #{key.inspect}" if LOG
     key = key.to_s
-    record = @db[:kv].where key: key
+    record = db[:kv].where key: key
     if record.first
       update record: record, value: value
     else
@@ -29,16 +33,12 @@ class KV # Key Value
     end
   end
 
-  def self.db
-    @db
-  end
-
   private
 
   def self.insert(key:, value:)
     puts "Key doesn't exists: insert" if LOG
-    id_next = @db[:kv].count
-    @db[:kv].insert key: key, value: value
+    id_next = db[:kv].count
+    db[:kv].insert key: key, value: value
   end
 
   def self.update(record:, value:)

@@ -1,0 +1,56 @@
+user     system      total        real
+
+
+
+
+initialization speed
+
+
+
+
+
+0.000000   0.000000   0.000000 (  0.002114)
+
+
+
+
+SET-GET 1k key-value pairs
+
+
+
+
+
+0.000000   0.000000   0.000000 (  0.004742)
+
+
+
+
+SET-GET-log 300 new kvs 300 updates
+
+
+
+
+
+0.370000   0.100000   0.470000 (  1.203101)
+
+
+
+
+SET-GET 300 existing kvs
+
+
+
+
+
+0.460000   0.150000   0.610000 (  1.673589)
+
+
+
+
+GET 5k existing kvs (same key)
+
+
+
+
+
+0.420000   0.030000   0.450000 (  0.448813)

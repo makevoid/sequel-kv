@@ -7,7 +7,7 @@ module Init
   # # DB_NAME_DEFAULT = ENV["DB_NAME_DEFAULT"]
   # DB_NAME_DEFAULT = "yourname" (overrides the default name, 'main')
 
-  def self.init!(log: false)
+  def self.init!(log: false, db:)
     db_path = db_current_path
 
     # db_path = # if RACK_ENV == "development"
@@ -16,7 +16,7 @@ module Init
     # #   "#{db_current_path}/tmp/tmp.db"
     # #end
 
-    @sequel_db = Sequel.connect "sqlite://#{db_path}"
+    @sequel_db = db || Sequel.connect("sqlite://#{db_path}")
 
     create_dirs!
 
