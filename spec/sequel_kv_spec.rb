@@ -26,18 +26,7 @@ describe "Sequel KV" do
   # spec setup here:
 
   specify "spec environment init" do # before all
-
-    # db cleanup:
-    #
-    # via truncate
-    # DB[:kv].truncate
-    #
-    # via drop table:
-    # run Benchmark do
-      DB.drop_table :kv
-    #   KV.init!
-    # end
-
+    DB.drop_table :kv
   end
 
   specify "db initialization" do
