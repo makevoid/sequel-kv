@@ -38,11 +38,9 @@ describe "Sequel KV" do
     columns.should include :value
   end
 
-  specify "starts empty" do
-    # empty table
+  specify "starts empty (db connection test)" do
+    # empty table (DB[:kv])
     DB[:kv].first.should be_nil
-    # gets an empty value
-
   end
 
   specify "sets a value" do
