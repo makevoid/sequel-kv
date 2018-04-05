@@ -22,7 +22,6 @@ describe "Sequel KV" do
     db.should be_a Sequel::SQLite::Database
   end
 
-
   # spec setup here:
 
   specify "spec environment init" do # before all
@@ -63,9 +62,5 @@ describe "Sequel KV" do
     KV[:foo].should be_a String
     KV[:foo].should eq "baz"
   end
-  #
-  # xspecify "extra checks" do
-  #   set = KV[:foo] = "bar"
-  #   set.should be true
-  # end
+
 end
