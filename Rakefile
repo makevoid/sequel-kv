@@ -1,14 +1,3 @@
-# # TODO: choose one
-#
-# desc "Test (Rspec)"
-# task :test do
-#   sh "bundle exec rspec"
-# end
-#
-# task default: :test
-
-# ---
-
 require 'bundler'
 Bundler.require :default, :test
 
