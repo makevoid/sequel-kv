@@ -7,6 +7,9 @@ group :development do
   gem "rake"
 end
 
+group :mysql do
+  gem "mysql2"
+end
 
 # note: install this gemfile with `bundle --without test` (mysql2 and redis as extra dependencies - also note that sqlite3 default dependency can be removed if used with mysql/postrgres or another db)
 

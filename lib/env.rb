@@ -4,7 +4,8 @@ end
 
 if defined? Bundler
   require 'bundler/setup'
-  Bundler.require :default, SequelKV::RACK_ENV
+  mysql_require = :mysql if ENV["mysql"] == "1"
+  Bundler.require :default, SequelKV::RACK_ENV, mysql_require
 else
   require 'sequel'
   if ENV["RACK_ENV"] == "test"

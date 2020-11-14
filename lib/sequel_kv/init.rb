@@ -8,7 +8,15 @@ module Init
   def self.init!(log: false, db:)
     db_path = db_current_path
 
-    @sequel_db = db || Sequel.connect("sqlite://#{db_path}")
+    database = "sqlite://#{db_path}"
+
+    if ENV["MYSQL"] = "1"
+      mysql_cs = ENV["MYSQL_CS"]
+      raise "MySQLConnStringNotSetError" if !mysql_cs || mysql_cs.empty?
+      database = "mysql2://#{mysql_cs}"
+    end
+
+    @sequel_db = db || Sequel.connect(database)
 
     create_dirs!
 
