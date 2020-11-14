@@ -4,12 +4,14 @@ KV = SequelKV::KV
 kv = KV.init!
 @db = kv.db
 
+puts "reset kv"
 @db[:kv].truncate
 
-puts "Empty value:"
+puts "is :test empty? (nil is ok)"
 puts KV[:test].inspect
 
+puts "setting :test to 'foobar'"
 KV[:test] = "foobar"
 
-puts "Value:"
+puts "getting :test"
 puts KV[:test].inspect
