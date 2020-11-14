@@ -10,7 +10,7 @@ module Init
 
     database = "sqlite://#{db_path}"
 
-    if ENV["MYSQL"] = "1"
+    if ENV["MYSQL"] == "1"
       mysql_cs = ENV["MYSQL_CS"]
       raise "MySQLConnStringNotSetError" if !mysql_cs || mysql_cs.empty?
       database = "mysql2://#{mysql_cs}"
