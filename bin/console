@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-# irb -r ../lib/env.rb
+echo "init SequelKV by executing this: KV = SequelKV::KV; KV.init!"
+
 bundle exec irb -r ./lib/sequel_kv.rb

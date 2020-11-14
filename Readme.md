@@ -14,7 +14,7 @@ This is the explanation of how to initialize and use the library with the defaul
 ```rb
 # initialize the library
 KV = SequelKV::KV
-kv = KV.init!
+KV.init!
 
 # write a key-value pair
 KV[:test] = "foobar"
