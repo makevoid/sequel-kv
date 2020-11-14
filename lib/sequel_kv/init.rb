@@ -5,7 +5,10 @@ module Init
 
   DB_NAME_DEFAULT = ENV["DB_NAME_DEFAULT"] || "db"
 
+  @@log = false
+
   def self.init!(log: false, db:)
+    @@log = log
     db_path = db_current_path
 
     database = "sqlite://#{db_path}"
@@ -16,9 +19,9 @@ module Init
       database = "mysql2://#{mysql_cs}"
     end
 
-    @sequel_db = db || Sequel.connect(database)
-
     create_dirs!
+
+    @sequel_db = db || Sequel.connect(database)
 
     if db_file_exists?
       puts "Using DB file: #{db_current_path}" if log
@@ -38,7 +41,8 @@ module Init
   def self.create_dirs!
     mkdir = "mkdir -p #{APP_HOME}"
 
-    puts `#{mkdir}`
+    output = `#{mkdir}`
+    puts "creating default dir\n#{output}" if @@log
   end
 
   def self.create_tables!
