@@ -15,3 +15,5 @@ KV[:test] = "foobar"
 
 puts "getting :test"
 puts KV[:test].inspect
+
+# note: use with mysql via: MYSQL=1 MYSQL_CS=username:password@localhost/db1 ruby example.rb
