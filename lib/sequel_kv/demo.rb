@@ -2,7 +2,6 @@ module SequelKV
 class Demo
 
   def self.init!
-    # DB = Seuel.connect "proto://.../db"
     kv = KV.init!
     @db = kv.db
 

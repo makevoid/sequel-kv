@@ -14,7 +14,6 @@ else
 end
 
 module SequelKV
-
   PATH = File.expand_path "../", __FILE__
 
   # app's home (config, default db location) directory

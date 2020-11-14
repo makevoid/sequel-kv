@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sequel sqlite://$HOME/.sequel-kv/dbs/main.db
+sequel sqlite://$HOME/.sequel-kv/db.db
 
 # if $1 == test
 # sequel sqlite://tmp.db
